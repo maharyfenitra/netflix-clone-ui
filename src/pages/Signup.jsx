@@ -47,9 +47,8 @@ export default function Signup() {
             {
               !showPassword && <button onClick={() => setShowPasseWord(true)}>Get Started</button>
             }
-
           </div>
-          <button onClick={handleSignIn}>Log in</button>
+          <button onClick={handleSignIn}>Sign up</button>
         </div>
       </div>
     </Container>
