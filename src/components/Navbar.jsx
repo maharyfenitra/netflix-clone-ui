@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { FaPowerOff, FaSearch } from 'react-icons/fa'
 import { firebaseAuth } from '../utils/firebase-config';
-import { signOut ,onAuthStateChanged} from 'firebase/auth';
+import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ isScrolled }) => {
@@ -20,9 +20,9 @@ const Navbar = ({ isScrolled }) => {
 
     onAuthStateChanged(firebaseAuth, (currentUser) => {
         if (!currentUser) {
-          navigate("/login");
+            navigate("/login");
         }
-      })
+    })
     return (
         <Container>
             <nav className={`flex ${isScrolled ? "scrolled" : ""}`}>
@@ -52,18 +52,16 @@ const Navbar = ({ isScrolled }) => {
                             }}
                         />
                     </div>
-                    <button onClick={() => 
-                        
-                        {
-                            try{
-                                
-                                signOut(firebaseAuth)
-                            }catch(error){
-                                console.log(error)
-                            }
-                            
-                        
-                        }}>
+                    <button onClick={() => {
+                        try {
+
+                            signOut(firebaseAuth)
+                        } catch (error) {
+                            console.log(error)
+                        }
+
+
+                    }}>
                         <FaPowerOff />
                     </button>
                 </div>
@@ -76,7 +74,7 @@ const Container = styled.div`
         background-color: black;
     }
     nav {
-        position: sticky;
+        position: fixed;
         top: 0;
         height: 6.5rem;
         width: 100%;
