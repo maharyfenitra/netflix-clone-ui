@@ -28,6 +28,7 @@ export default function Login() {
       navigate("/");
     }
   })
+  
   return (
     <Container>
       <BackgroundImage />

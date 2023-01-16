@@ -19,7 +19,7 @@ export default function Netflix() {
   useEffect(() => {
     dispatch(getGenres())
     // eslint-disable-next-line
-  }, [])
+  }, [genresLoaded])
 
   useEffect(() => {
     if (genresLoaded) {
